@@ -11,11 +11,11 @@ HTML:
 <p style="font-size:30px;">Hello</p>
 </div>
 </body>
-</html>
-```
+</html>```
 
 H#:
-```head.title{title=Hello World};
+```
+head.title{title=Hello World};
 div{text-align=center, attr-id=container} (
 text{text=Hello, font-size=30px};
 )
