@@ -2,7 +2,7 @@
 H Sharp is a combination of HTML and CSS, with all attributes and properties combined into one location.
 
 HTML:
-<html>
+```<html>
 <head>
 <title>Hello World!</title>
 </head>
@@ -11,12 +11,12 @@ HTML:
 <p style="font-size:30px;">Hello</p>
 </div>
 </body>
-</html>
+</html>```
 
 H#:
-head.title{title=Hello World};
+```head.title{title=Hello World};
 div{text-align=center, attr-id=container} (
 text{text=Hello, font-size=30px};
-)
+)```
 
 The compaction in H# allows for maximum efficiency when coding :)
