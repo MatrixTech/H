@@ -2,7 +2,8 @@
 H Sharp is a combination of HTML and CSS, with all attributes and properties combined into one location.
 
 HTML:
-```<html>
+```
+<html>
 <head>
 <title>Hello World!</title>
 </head>
@@ -11,7 +12,8 @@ HTML:
 <p style="font-size:30px;">Hello</p>
 </div>
 </body>
-</html>```
+</html>
+```
 
 H#:
 ```
