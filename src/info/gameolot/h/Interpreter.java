@@ -22,7 +22,7 @@ public class Interpreter {
 			head = false;
 		}
 		String b = a[1];
-		String c = b.replace(" ", "");
+		String c = b.replace(", ", ",");
 		String d = c.replace("}", "");
 		String e = d.replace("=", ":");
 		String[] f = e.split(",");
@@ -30,7 +30,7 @@ public class Interpreter {
 		for (int i = 0; i < f.length; i++) {
 			if(f[i].startsWith(type + ":")) {
 				String g = f[i].replace(type, "");
-				String h = g.replace(" ", "");
+				String h = g.replace(": ", "");
 				con = h.replace(":", "");
 				f[i] = "";
 			}

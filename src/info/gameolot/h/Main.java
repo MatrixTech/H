@@ -16,17 +16,23 @@ public class Main {
 	static List<Element> elementList = new ArrayList<Element>();
 	static List<Element> headElementList = new ArrayList<Element>();
 	static boolean Web;
-	public static void file(boolean cv) {
+	public static void file(boolean cv, boolean isFileProvided, boolean isEndProvided, String fileLoc, String endLoc) {
+		File file = null;
+		String a = "";
+		if(isFileProvided){
+			file = new File(fileLoc);
+			a = fileLoc;
+		} else {
 		System.out.println("Enter file location:");
 		Scanner s = new Scanner(System.in);
-		String a = s.next();
-		File file = null;
+		 a = s.next();
 		file = new File(a);
+		}
 		Element[] heirarchy = new Element[100];
 		try {
 			Scanner s2 = new Scanner(file).useDelimiter(";");
 			System.out.println("Reading and converting file...");
-			int v = 1;{
+			int v = 1;
 				boolean aa = false;
 				int index = 0;
 				while(s2.hasNext()){	
@@ -75,7 +81,7 @@ public class Main {
 			}
 			 go = true;
 			
-		} } catch (FileNotFoundException e) {
+		 } catch (FileNotFoundException e) {
 			System.out.println("File not found");
 			System.out.println(e);
 			go = false;
@@ -96,7 +102,7 @@ public class Main {
 				String b;
 			System.out.println("Saving new file...");
 			if(cv) {
-			b = a.replace(".hs", ".html");
+			b = a.replace(".hsf", ".html");
 			} else
 			{
 				b = System.getProperty("java.io.tmpdir") + "/temp.html";
@@ -136,13 +142,16 @@ public class Main {
 	}
 	public static void main(String[] args) {
 		NativeSwing.initialize();
+		if(args.length != 0) {
+			Main.file(true, true, false, args[0], "");
+		}
 		Scanner s = new Scanner(System.in);
 		System.out.println("Enter in function:");
 		String c = s.next();
 		if(c.equals("compile") || c.equals("c")) {
-			Main.file(true);
+			Main.file(true, false, false, "", "");
 		}else if (c.equals("view") || c.equals("v")) {
-			Main.file(false);
+			Main.file(false, false, false, "", "");
 		}
 	}
 }
