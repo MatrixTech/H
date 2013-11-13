@@ -20,6 +20,12 @@ namespace WindowsFormsApplication1
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Main());
         }
+        public static string openFile() { 
+            var ofd = new OpenFileDialog();
+            ofd.Filter = "H# Files (*.hsf)|*.hsf";
+            ofd.ShowDialog();
+            return ofd.FileName;
+        }
         public static void getHTML(string inFile, string outFile)
         {
 
@@ -35,14 +41,17 @@ namespace WindowsFormsApplication1
                 var appLoc = AppDomain.CurrentDomain.BaseDirectory;
                 saveBatFile("i.jar", appLoc, inFile, appLoc + "r.bat");
                 var process = Process.Start(appLoc + "r.bat");
-                process.WaitForExit(300);
+                process.WaitForExit(3000);
                 var ofile = inFile.Replace(".hsf", ".html");
                 var mfile = outFile;
-                if (File.Exists(mfile))
-                    File.Delete(mfile);
+                if (ofile != mfile)
+                {
+                    if (File.Exists(mfile))
+                        File.Delete(mfile);
 
-                // Move the file.
-                File.Move(ofile, mfile);
+                    // Move the file.
+                    File.Move(ofile, mfile);
+                }
             }
         }
 

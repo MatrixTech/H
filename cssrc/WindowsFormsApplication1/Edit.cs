@@ -21,6 +21,7 @@ namespace WindowsFormsApplication1
         public Edit(string file)
         {
             InitializeComponent();
+            LoadFile(file);
         }
 
         private void Edit_Load(object sender, EventArgs e)
@@ -50,6 +51,15 @@ namespace WindowsFormsApplication1
         }
         private void editText_KeyPress(object sender, KeyPressEventArgs e)
         {
+        }
+        public void LoadFile(string fileLoc)
+        {
+            this.editText.Text = File.ReadAllText(fileLoc);
+        }
+
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LoadFile(Program.openFile());
         }
 
     }

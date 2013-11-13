@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.MenuInterpret = new System.Windows.Forms.Button();
             this.menuNew = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -58,7 +59,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe Print", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(141, 70);
+            this.label1.Location = new System.Drawing.Point(141, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(224, 168);
             this.label1.TabIndex = 2;
@@ -72,17 +73,19 @@
             this.button1.TabIndex = 3;
             this.button1.Text = "Open FIle...";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(377, 247);
+            this.ClientSize = new System.Drawing.Size(377, 190);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuNew);
             this.Controls.Add(this.MenuInterpret);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Main";
             this.Text = "Main";
             this.Load += new System.EventHandler(this.Main_Load);
